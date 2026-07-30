@@ -7,27 +7,13 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/Portfolio" component={Home} />
-      <Route path="/404" component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={Home} />
-    </Switch>
-  );
-}
-
 function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <WouterRouter hook={useHashLocation}>
-            <Router />
-          </WouterRouter>
+          <Home />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
